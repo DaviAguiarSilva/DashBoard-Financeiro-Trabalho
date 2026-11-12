@@ -1,6 +1,8 @@
 <?php
 /** @var string $csrf */
 /** @var array|null $flash */
+/** @var string $email */
+/** @var bool $lembrar */
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -69,6 +71,20 @@
             background: #1d4ed8;
         }
 
+        .lembrar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: -5px 0 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .lembrar input {
+            width: auto;
+            margin: 0;
+        }
+
         .mensagem {
             padding: 12px;
             margin-bottom: 15px;
@@ -114,6 +130,7 @@
         <input
             type="email"
             name="email"
+            value="<?= e($email ?? '') ?>"
             placeholder="Digite seu e-mail"
             required
         >
@@ -125,6 +142,11 @@
             placeholder="Digite sua senha"
             required
         >
+
+        <label class="lembrar">
+            <input type="checkbox" name="lembrar" value="1" <?= !empty($lembrar) ? 'checked' : '' ?>>
+            Lembrar meu e-mail neste computador
+        </label>
 
         <button type="submit">Entrar</button>
 

@@ -133,6 +133,15 @@
             required
         >
 
+        <label>Confirmar senha</label>
+        <input
+            type="password"
+            name="confirmar_senha"
+            placeholder="Digite a senha novamente"
+            minlength="6"
+            required
+        >
+
         <button type="submit">Criar minha conta</button>
 
     </form>
@@ -147,4 +156,3 @@
 
 </body>
 </html>
-
