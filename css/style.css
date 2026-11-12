@@ -1,0 +1,165 @@
+/* ---------- Base ---------- */
+* { box-sizing: border-box; font-family: Arial, sans-serif; }
+
+body { margin: 0; background: #f1f5f9; color: #1e293b; }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 18px 5%;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+header h2 { margin: 0; }
+header p  { margin: 4px 0 0; color: #64748b; }
+
+main { padding: 35px 5%; max-width: 1400px; margin: auto; }
+
+main.container-form { max-width: 520px; margin: 40px auto; padding: 0 5%; }
+
+/* ---------- Botão sair ---------- */
+.sair {
+    padding: 9px 16px;
+    background: white;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.sair:hover { background: #f1f5f9; }
+
+/* ---------- Mensagens ---------- */
+.mensagem {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    background: #fee2e2;
+    color: #991b1b;
+}
+.mensagem.sucesso { background: #dcfce7; color: #166534; }
+
+.flash { padding: 14px; border-radius: 8px; margin-bottom: 20px; }
+.flash.sucesso { background: #dcfce7; color: #166534; }
+.flash.erro    { background: #fee2e2; color: #991b1b; }
+
+/* ---------- Cards ---------- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000008;
+}
+.card p  { color: #64748b; margin: 0 0 15px; }
+.card h2 { font-size: 25px; margin: 0; }
+
+/* ---------- Cores ---------- */
+.receita { color: #16a34a; }
+.despesa { color: #dc2626; }
+.saldo   { color: #2563eb; }
+
+/* ---------- Seções e gráficos ---------- */
+.secao {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 25px;
+}
+
+.graficos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+.graficos .secao { margin-top: 0; }
+
+.area-grafico { position: relative; height: 280px; }
+
+/* ---------- Metas ---------- */
+.meta { padding: 14px 0; border-bottom: 1px solid #e2e8f0; }
+.meta:last-child { border-bottom: none; }
+
+.meta-topo {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+.meta-valores { color: #64748b; font-size: 14px; }
+
+.barra {
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 99px;
+    overflow: hidden;
+}
+.barra-preenchida { height: 100%; border-radius: 99px; }
+
+.meta-status { margin-top: 6px; font-size: 13px; font-weight: bold; }
+
+.status-ok        { color: #16a34a; }
+.status-atencao   { color: #d97706; }
+.status-estourada { color: #dc2626; }
+
+.fundo-ok        { background: #16a34a; }
+.fundo-atencao   { background: #d97706; }
+.fundo-estourada { background: #dc2626; }
+
+/* ---------- Tabelas ---------- */
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+
+th, td { padding: 14px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+th { color: #64748b; }
+
+.vazio { color: #94a3b8; padding: 20px 0; }
+
+/* ---------- Botões de ação ---------- */
+.acoes { display: flex; gap: 12px; margin: 15px 0; flex-wrap: wrap; }
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+.btn-receita  { background: #16a34a; }
+.btn-despesa  { background: #dc2626; }
+.btn-cancelar { background: #94a3b8; }
+
+/* ---------- Formulários ---------- */
+label { display: block; margin: 15px 0 6px; color: #64748b; }
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+}
+
+.botoes { display: flex; gap: 12px; margin-top: 25px; }
+.botoes .btn { flex: 1; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 600px) {
+    main { padding: 20px 4%; }
+    .graficos { grid-template-columns: 1fr; }
+    .secao { overflow-x: auto; }
+    table { min-width: 500px; }
+}
