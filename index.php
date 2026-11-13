@@ -34,6 +34,7 @@ require_once __DIR__ . '/models/Usuario.php';
 require_once __DIR__ . '/models/Categoria.php';
 require_once __DIR__ . '/models/Lancamento.php';
 require_once __DIR__ . '/models/Meta.php';
+require_once __DIR__ . '/controllers/LancamentoController.php';
 
 require_once __DIR__ . '/controllers/AuthController.php';
 require_once __DIR__ . '/controllers/DashboardController.php';
@@ -44,6 +45,7 @@ $rota = $_GET['rota'] ?? (empty($_SESSION['usuario_id']) ? 'login' : 'dashboard'
 // 6. Criar os Controllers
 $auth      = new AuthController($pdo);
 $dashboard = new DashboardController($pdo);
+$lancamento = new LancamentoController($pdo);
 
 // 7. Direcionar para a página correspondente
 switch ($rota) {
@@ -63,6 +65,14 @@ switch ($rota) {
     case 'dashboard':
         $dashboard->index();
         break;
+
+    case 'lancamento_novo':
+        $lancamento->novo();
+        break;
+
+    case 'lancamento_salvar':
+        $lancamento->salvar();
+        break;    
 
     default:
         http_response_code(404);
